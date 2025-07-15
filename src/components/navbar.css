@@ -1,0 +1,28 @@
+
+.logo-bounce {
+  transition: transform 0.2s ease-out;
+}
+
+.logo-bounce:hover {
+  animation: tripleBounce 0.8s ease-out forwards;
+}
+.clickBounce:active {
+  animation: onceBounce 0.3s ease-out forwards;
+}
+.bounce:hover {
+  animation: tripleBounce 0.9s ease-out forwards;
+}
+
+@keyframes onceBounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes tripleBounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.05); }
+  60%  { transform: scale(1); }
+  80%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
