@@ -10,7 +10,7 @@
   animation: onceBounce 0.3s ease-out forwards;
 }
 .bounce:hover {
-  animation: tripleBounce 0.9s ease-out forwards;
+  animation: onceBounce 0.9s ease-out forwards;
 }
 
 @keyframes onceBounce {
@@ -25,4 +25,13 @@
   60%  { transform: scale(1); }
   80%  { transform: scale(1.05); }
   100% { transform: scale(1); }
+}
+
+.nav-item {
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.nav-item:hover{
+  filter: drop-shadow(0 0 15px rgb(255, 254, 254));
 }

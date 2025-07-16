@@ -4,18 +4,27 @@ import logoLight from "../assets/logo-light.png";
 import './navbar.css';
 
 function Navbar() {
-
+  const [isScrolled,setIsScrolled] = useState(false);
+  useEffect(()=>{
+    const onscroll = ()=>{
+      setIsScrolled(window.scrollY>50)
+    }
+    window.addEventListener("scroll",onscroll);
+    return ()=>window.removeEventListener("scroll",onscroll); // clean up ke liye, baad me ye dobara na chl jaye 
+  },[]);
   return (
-    <header className="fixed h-17 w-full flex justify-between">
+    <header className={`h-17 w-full flex justify-between fixed top-0 left-0 z-50 transition-colors duration-300 ${
+        isScrolled ? "bg-black/90 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}>
         <div className="logo flex justify-evenly flex-1">
             <a href="./" className="clickBounce" onClick={(e) => e.preventDefault()}><img className="h-18 w-20 logo-bounce cursor-pointer" src={logoDark} alt="logo" /></a>
         </div>
         <nav className="nav flex flex-wrap justify-center gap-12 sm:gap-10 items-center flex-1/2 text-white text-l">
-            <button className="cursor-pointer clickBounce bounce">Projects</button>
-            <button className="cursor-pointer clickBounce bounce">Experience</button>
-            <button className="cursor-pointer clickBounce bounce">Education</button>
-            <button className="cursor-pointer clickBounce bounce">Coding Profiles</button>
-            <button className="cursor-pointer clickBounce bounce">Contact</button>
+            <button className="cursor-pointer clickBounce bounce nav-item">Projects</button>
+            <button className="cursor-pointer clickBounce bounce nav-item">Experience</button>
+            <button className="cursor-pointer clickBounce bounce nav-item">Education</button>
+            <button className="cursor-pointer clickBounce bounce nav-item">Coding Profiles</button>
+            <button className="cursor-pointer clickBounce bounce nav-item">Contact</button>
         </nav>
         <div className="mode flex flex-1 justify-center text-2xl">
             <button className="justify-self-end  cursor-pointer bounce clickBounce">🌞</button>
