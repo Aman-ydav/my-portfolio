@@ -1,0 +1,14 @@
+.bg-grid-pattern {
+  background-image:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0), transparent 80px),
+    linear-gradient(to right, rgba(255,255,255,0.1) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255,255,255,0.1) 2px, transparent 2px);
+  background-size: 110px 110px;
+  background-position: -4px -10px;
+}
+
+
+.mask-gradient-bottom {
+  -webkit-mask-image: linear-gradient(to top, transparent, black 20%);
+  mask-image: linear-gradient(to top, transparent, black 20%);
+}
