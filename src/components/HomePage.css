@@ -12,3 +12,53 @@
   -webkit-mask-image: linear-gradient(to top, transparent, black 20%);
   mask-image: linear-gradient(to top, transparent, black 20%);
 }
+
+
+
+/* Responsive Styles */
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .tech-tags {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .tech-tags {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .tech-title {
+    font-size: 1.5rem;
+  }
+}
