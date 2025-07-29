@@ -6,6 +6,8 @@ import Exp2 from "../assets/exp2.png";
 import Exp5 from "../assets/exp5.png";
 import Exp4 from "../assets/exp4.png";
 import Exp1 from "../assets/exp1.png";
+import Code1 from "../assets/code1.png";
+import Code2 from "../assets/code2.png";
 
 
 const projects = [
@@ -100,12 +102,12 @@ const experienceData = [
 
 const codingProfiles = [
   {
-    icon: "src/assets/code1.png",
+    icon: Code1,
     title: "LeetCode",
     description: "Solved over 120 questions with a streak of 50 days.",
   },
   {
-    icon: "src/assets/code2.png",
+    icon: Code2,
     title: "GeeksforGeeks",
     description:
       "Institute Rank 5700 , solved 100 questions with a streak of 0 days.",

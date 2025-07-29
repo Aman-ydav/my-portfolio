@@ -30,8 +30,8 @@ function Navbar() {
   const navItems = [
     { label: "Projects", to: "projects" },
     { label: "Experience", to: "experience" },
-    { label: "Education", to: "education" },
     { label: "Coding Profiles", to: "coding" },
+    { label: "Education", to: "education" },
     { label: "Contact", to: "contact" },
   ];
 
