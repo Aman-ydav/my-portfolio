@@ -1,8 +1,8 @@
 const projects = [
     {
-      title: "Spark Student Organization Website",
+      title: "Spark Student Club Website",
       description:
-        "Official website for Spark student organisation featuring events, blog, and a Node.js-based join form.",
+        "Official website for Spark student organisation featuring events, team, and a database connected joining form.",
       imageUrl: "src/assets/img3.png",
       techStack: [
         "devicon-html5-plain colored",
@@ -19,7 +19,7 @@ const projects = [
     {
       title: "Virtual Zoo",
       description:
-        "A creative and educational virtual zoo platform where users can explore animal facts and habitats interactively.",
+        "A creative and educational virtual zoo platform where users can explore different species hologram interactively.",
       imageUrl: "src/assets/img5.png",
       techStack: [
         "devicon-html5-plain colored",
@@ -31,7 +31,7 @@ const projects = [
     {
       title: "Diabetes Predictor",
       description:
-        "Maching Learning based tool that predicts diabetes risk using real data and user health metrics.",
+        "ML - based tool that predicts diabetes risk using real data and user health metrics.",
       imageUrl: "src/assets/img6.png",
       techStack: [
         "devicon-html5-plain colored",
@@ -58,17 +58,7 @@ const projects = [
     },
   ];
 
-  const Projects = () => {
-    const renderProjects = () => {
-      return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
-            <ProjectCard key={idx} {...project} />
-          ))}
-        </div>
-      );
-    };
-  };
+
 
 const experienceData = [
   {
@@ -81,19 +71,19 @@ const experienceData = [
     icon: "src/assets/exp5.png",
     title: "Technical Head – SPARK",
     description:
-      "Led the technical division of SPARK, a student-run tech organization. Mentored junior developers, organized technical events, and spearheaded internal project development to build a collaborative learning ecosystem.",
+      "Led the technical Wing of SPARK, a student-run organization at LPU. Mentored junior developers, organized technical events, and spearheaded internal project development to build a collaborative learning ecosystem.",
   },
   {
     icon: "src/assets/exp4.png",
     title: "1st Runner-Up – Neural Nexus Hackathon",
     description:
-      "Secured the 2nd position at Neural Nexus, under Cognitia’25 (LPU). Developed an AI-driven solution in a 24-hour national-level hackathon, competing among top-tier student innovators.",
+      "Secured the 2nd position at Neural Nexus, under Cognitia’25 (LPU). Developed an AI-driven solution in a 24-hour interUniversity-level hackathon, competing among top student innovators.",
   },
   {
     icon: "src/assets/exp1.png",
     title: "Web Developer",
     description:
-      "Developed dynamic websites and full-stack applications for clients using React, Node.js, and PHP. Ensured optimal performance and responsiveness tailored to client needs.",
+      "Developed dynamic websites and full-stack applications for clients using React, Node.js, and MongoDB. Ensured optimal performance and responsiveness tailored to client needs.",
   },
   
 ];
@@ -102,13 +92,13 @@ const codingProfiles = [
   {
     icon: "src/assets/code1.png",
     title: "LeetCode",
-    description: "Solved over 105 questions with a streak of 60 days.",
+    description: "Solved over 120 questions with a streak of 50 days.",
   },
   {
     icon: "src/assets/code2.png",
     title: "GeeksforGeeks",
     description:
-      "Institute Rank 5640, solved 90 questions with a streak of 0 days.",
+      "Institute Rank 5700 , solved 100 questions with a streak of 0 days.",
   },
 
 ];

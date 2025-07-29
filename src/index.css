@@ -17,12 +17,12 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #030321; 
+  background-color: #140321; 
   border-radius: 10px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background-color: #030329; 
+  background-color: #250329; 
 }
 
 
@@ -32,42 +32,3 @@ h1, h2, h3, h4, h5 {
 }
 
 
-
-.glow-orb {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent);
-  filter: blur(25px);
-  border-radius: 50%;
-  animation: moveAround 8s linear infinite;
-  z-index: 1;
-  pointer-events: none;
-}
-
-@keyframes moveAround {
-  0% {
-    top: 0;
-    left: 0;
-  }
-  25% {
-    top: 0;
-    left: 100%;
-    transform: translate(-100%, 0);
-  }
-  50% {
-    top: 100%;
-    left: 100%;
-    transform: translate(-100%, -100%);
-  }
-  75% {
-    top: 100%;
-    left: 0;
-    transform: translate(0, -100%);
-  }
-  100% {
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-  }
-}

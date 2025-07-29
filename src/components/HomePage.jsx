@@ -2,6 +2,7 @@ import HeroImg from "../assets/img1.png";
 import "./HomePage.css";
 import ProjectCard from "./CardCom.jsx";
 import { TypeAnimation } from "react-type-animation";
+import { FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
 import ExperienceCard from "./ExperienceCard.jsx";
 import CodingProfileCard from "./CodingProfileCard";
 import { projects, experienceData, codingProfiles } from "./Data.jsx";
@@ -77,13 +78,15 @@ function HomePage() {
             </a>
           </div>
 
-          <button className="mt-6 px-6 py-2 border cursor-pointer border-white rounded-lg hover:bg-white hover:text-black transition-all">
-            Show my work →
-          </button>
+          <a href="#projects">
+            <button className="mt-6 px-6 py-2 border border-purple-500 cursor-pointer rounded-lg hover:bg-white hover:text-black transition-all">
+              Show my work →
+            </button>
+          </a>
         </div>
 
         <div className="relative z-20 p-4 sm:p-6 rounded-2xl shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mx-10 sm:mx-50 md:mx-30 lg:mx-40 mt-12">
-          <div className="flex flex-col justify-center gap-4">
+          <div className="flex flex-col justify-start items-start gap-4">
             <img
               src={HeroImg}
               alt="Project Preview"
@@ -94,13 +97,13 @@ function HomePage() {
           </div>
 
           <div className="flex flex-col justify-around gap-6 z-20">
-            <div className="bg-[#0d0c1b] p-4 sm:p-6 rounded-2xl shadow-lg">
-              <div className="flex flex-col md:flex-row justify-between gap-6 items-start">
+            <div className="bg-[#0d0c1b] p-4 rounded-2xl shadow-lg">
+              <div className="flex flex-col sm:flex-row md:flex-row justify-between gap-3 items-center">
                 <div className="flex flex-col gap-2 sm:gap-4">
-                  <p className="text-sm text-gray-400">
+                  <p className="text-xs md:text-xs text-gray-400">
                     I constantly try to improve
                   </p>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                  <h2 className="text-lg sm:text-lg md:text-xl font-bold text-white">
                     My Tech Stack
                   </h2>
                 </div>
@@ -123,16 +126,16 @@ function HomePage() {
 
             <div className="flex flex-row md:flex-rpw bg-[#0d0c1b] p-4 z-20 sm:p-6 rounded-2xl shadow-lg gap-4 md:gap-6">
               <div className="grid grid-rows-2 gap-4 flex-1 justify-between items-center">
-                <div className="bg-[#1c1b2a] py-2 px-1 text-white rounded-md text-center font-medium">
+                <div className="bg-[#1c1b2a] py-2 px-3 text-white rounded-md text-center font-medium">
                   <i class="ri-tools-line"></i> Problem Solver
                 </div>
-                <div className="bg-[#1c1b2a] py-2 px-1 rounded-md text-white text-center font-medium">
+                <div className="bg-[#1c1b2a] py-2 px-3 rounded-md text-white text-center font-medium">
                   <i class="ri-team-line"></i> Team-Oriented
                 </div>
               </div>
 
-              <div className="flex-3/8 flex items-center z-20">
-                <h3 className="text-md sm:text-lg md:text-xl font-semibold text-white leading-relaxed">
+              <div className="flex-3/11 flex items-center z-20">
+                <h3 className="text-md sm:text-md md:text-lg font-semibold text-white leading-relaxed">
                   I prioritize client collaboration, fostering open
                   communication to deliver reliable & impactful sol<sup>n</sup>.
                 </h3>
@@ -141,6 +144,7 @@ function HomePage() {
           </div>
         </div>
       </section>
+
       <section className="relative w-full min-h-fit bg-[#030318] text-white overflow-hidden  z-20">
         <div className="absolute inset-0 z-0"></div>
         <div className="absolute inset-0 mask-gradient-bottom z-[0] pointer-events-none" />
@@ -148,7 +152,7 @@ function HomePage() {
         <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center  z-20">
           <div className="flex justify-center md:justify-start">
             <img
-              src="https://media.licdn.com/dms/image/v2/C5612AQE2ou8wVmnF6Q/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1589656166566?e=2147483647&v=beta&t=Uc9SxgcluEP_FPHMJHsoSQwuPFWkS961ZQo4Jdz9FOw"
+              src="src/assets/img2.png"
               alt="Full Stack Illustration"
               className="w-full max-w-md md:max-w-lg lg:max-w-xl pointer-events-none select-none rounded-2xl "
               draggable="false"
@@ -175,12 +179,8 @@ function HomePage() {
               </h3>
               <ul className="mt-3 text-base space-y-2 text-white/80 list-disc list-inside">
                 <li>
-                  Building responsive website frontends using React, Redux, and
-                  Node.js
-                </li>
-                <li>
-                  Developing full web applications using HTML, CSS, and
-                  JavaScript
+                  Building responsive website frontends using React, Tailwind,
+                  JavaScript, and Node.js
                 </li>
                 <li>
                   Designing and implementing RESTful backend APIs using Node.js,
@@ -200,13 +200,16 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20">
+      <section
+        id="projects"
+        className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      >
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text4xl sm:text-5xl font-bold mb-15 text-center">
             My <span className="text-purple-400">Projects</span>
           </h2>
-          <div className="w-full px-4 sm:px-8 md:px-16 lg:px-30">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-15 gap-x-10">
+          <div className="w-full flex flex-col lg:flex-row flex-wrap justify-center items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-18 gap-x-8">
               {projects.map((project, idx) => (
                 <ProjectCard key={idx} {...project} />
               ))}
@@ -215,15 +218,21 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20">
-        <div className="max-w-screen-xl mx-30">
-          <h2 className="text4xl sm:text-5xl font-bold mb-15 text-center">
+      <section
+        id="experience"
+        className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      >
+        <div className="max-w-screen-xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
             My{" "}
             <span className="text-purple-400">
               Experience <span className="text-white">&</span> Milestones
             </span>
           </h2>
-          <div className="flex flex-wrap gap-y-10 gap-x-6 justify-center mt-10">
+
+          <div
+            className="flex flex-wrap justify-center gap-y-10 gap-x-6 mt-10"
+          >
             {experienceData.map((exp, i) => (
               <ExperienceCard
                 key={i}
@@ -236,17 +245,69 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20">
-        <div className="max-w-screen-xl mx-30">
+      <section id="coding" className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20">
+        <div className="max-w-screen-xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
             My <span className="text-purple-400">Coding Profiles</span>
           </h2>
-          <div className="flex flex-wrap gap-y-10 gap-x-6 justify-center mt-10 text-center items-center ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             {codingProfiles.map((profile, i) => (
               <CodingProfileCard key={i} {...profile} />
             ))}
           </div>
         </div>
+      </section>
+
+      <section
+        className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center"
+      >
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug max-w-3xl">
+          Ready to take <span className="text-purple-400">your</span> digital
+          presence to the next level?
+        </h2>
+
+        <p className="mt-6 text-gray-400 max-w-xl text-base md:text-lg">
+          Reach out to me today and let's discuss how I can help you achieve
+          your goals.
+        </p>
+
+        <a
+          href="mailto:amanyadav923949@gmail.com"
+          className="mt-8 inline-flex items-center px-6 py-3 border border-purple-500 text-white rounded-md hover:bg-white hover:text-black transition-all duration-300"
+        >
+          Let’s get in touch <span className="ml-2">🡥</span>
+        </a>
+
+        <div className="mt-12 flex items-center gap-4">
+          <a
+            href="https://github.com/Aman-ydav"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
+          >
+            <FaGithub className="w-5 h-5" />
+          </a>
+          <a
+            href="t.me/aman_ydav"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
+          >
+            <FaPaperPlane className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aman--yadv/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
+          >
+            <FaLinkedin className="w-5 h-5" />
+          </a>
+        </div>
+
+        <p className="mt-12 text-sm text-gray-500">
+          Copyright © 2025 Aman Yadav
+        </p>
       </section>
     </>
   );

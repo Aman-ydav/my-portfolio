@@ -2,18 +2,18 @@ import React from "react";
 
 const ProjectCard = ({ title, description, imageUrl, techStack, link }) => {
   return (
-    <div className="bg-[#0d0c1b] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 animate-float">
+    <div className="bg-[#0d0c1b] w-100 h-auto flex flex-col justify-start rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 animate-float">
       <div className="p-5">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-60 object-cover pointer-events-none select-none rounded-t-xl"
+          className="w-auto object-cover pointer-events-none select-none rounded-t-lg"
         />
       </div>
-      <div className="px-5 py-4 flex flex-col gap-2">
+      <div className="p-5 flex flex-col gap-3">
         <h3 className="text-2xl font-semibold text-white">{title}</h3>
         <p className="text-gray-300 text-md">{description}</p>
-        <div className="flex justify-between">
+        <div className="flex justify-between item-self-end">
           <div className="flex flex-wrap gap-2 mt-2 text-2xl text-gray-300 cursor-pointer">
             {techStack?.map((iconClass, idx) => (
               <i key={idx} className={`${iconClass} `}></i>

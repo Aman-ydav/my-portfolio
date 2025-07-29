@@ -13,10 +13,10 @@ const CursorCircle = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-100 h-100 rounded-full pointer-events-none z-11 blur-3xl bg-purple-900 opacity-10"
+      className="fixed top-0 left-0 w-100 h-100 rounded-full pointer-events-none z-11 blur-3xl bg-purple-900 opacity-15"
       style={{
         transform: `translate(${position.x - 72}px, ${position.y - 72}px)`,
-        transition: "transform 0.8s linear",
+        transition: "transform 0.9s linear",
       }}
     />
   );
