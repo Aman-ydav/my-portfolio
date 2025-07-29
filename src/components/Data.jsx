@@ -1,9 +1,19 @@
+import Img3 from "../assets/img3.png";
+import Img5 from "../assets/img5.png";
+import Img6 from "../assets/img6.png";
+import Img4 from "../assets/img4.png";
+import Exp2 from "../assets/exp2.png";
+import Exp5 from "../assets/exp5.png";
+import Exp4 from "../assets/exp4.png";
+import Exp1 from "../assets/exp1.png";
+
+
 const projects = [
     {
       title: "Spark Student Club Website",
       description:
         "Official website for Spark student organisation featuring events, team, and a database connected joining form.",
-      imageUrl: "src/assets/img3.png",
+      imageUrl: Img3,
       techStack: [
         "devicon-html5-plain colored",
         "devicon-css3-plain colored",
@@ -20,7 +30,7 @@ const projects = [
       title: "Virtual Zoo",
       description:
         "A creative and educational virtual zoo platform where users can explore different species hologram interactively.",
-      imageUrl: "src/assets/img5.png",
+      imageUrl: Img5,
       techStack: [
         "devicon-html5-plain colored",
         "devicon-css3-plain colored",
@@ -32,7 +42,7 @@ const projects = [
       title: "Diabetes Predictor",
       description:
         "ML - based tool that predicts diabetes risk using real data and user health metrics.",
-      imageUrl: "src/assets/img6.png",
+      imageUrl: Img6,
       techStack: [
         "devicon-html5-plain colored",
         "devicon-css3-plain colored",
@@ -46,7 +56,7 @@ const projects = [
       title: "Fleet Management System",
       description:
         "PHP-based system with login, driver tracking, and vehicle allocation for managers",
-      imageUrl: "src/assets/img4.png",
+      imageUrl: Img4,
       techStack: [
         "devicon-html5-plain colored",
         "devicon-tailwindcss-plain colored",
@@ -62,25 +72,25 @@ const projects = [
 
 const experienceData = [
   {
-    icon: "src/assets/exp2.png",
+    icon: Exp2,
     title: "Lifelong Learner & Tech Explorer",
     description:
       "Consistently upskilling in MERN stack and DSA. Actively solving LeetCode problems and contributing to open-source projects while building a strong software engineering foundation.",
   },
   {
-    icon: "src/assets/exp5.png",
+    icon: Exp5,
     title: "Technical Head – SPARK",
     description:
       "Led the technical Wing of SPARK, a student-run organization at LPU. Mentored junior developers, organized technical events, and spearheaded internal project development to build a collaborative learning ecosystem.",
   },
   {
-    icon: "src/assets/exp4.png",
+    icon: Exp4,
     title: "1st Runner-Up – Neural Nexus Hackathon",
     description:
       "Secured the 2nd position at Neural Nexus, under Cognitia’25 (LPU). Developed an AI-driven solution in a 24-hour interUniversity-level hackathon, competing among top student innovators.",
   },
   {
-    icon: "src/assets/exp1.png",
+    icon: Exp1,
     title: "Web Developer",
     description:
       "Developed dynamic websites and full-stack applications for clients using React, Node.js, and MongoDB. Ensured optimal performance and responsiveness tailored to client needs.",
