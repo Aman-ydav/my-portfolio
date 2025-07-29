@@ -1,4 +1,5 @@
 import HeroImg from "../assets/img1.png";
+import Img2 from "../assets/img2.png";
 import "./HomePage.css";
 import ProjectCard from "./CardCom.jsx";
 import { TypeAnimation } from "react-type-animation";
@@ -152,7 +153,7 @@ function HomePage() {
         <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center  z-20">
           <div className="flex justify-center md:justify-start">
             <img
-              src="src/assets/img2.png"
+              src={Img2}
               alt="Full Stack Illustration"
               className="w-full max-w-md md:max-w-lg lg:max-w-xl pointer-events-none select-none rounded-2xl "
               draggable="false"
