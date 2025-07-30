@@ -21,7 +21,7 @@ function HomePage() {
             <span className="text-purple-400"> solving problems</span> is the
             goal.
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mt-6 flex flex-wrap justify-center items-center gap-2">
+          <p className="text-sm xs:text-base sm:text-lg md:text-2xl text-gray-300 mt-6 flex flex-wrap justify-center items-center gap-2 text-center leading-relaxed">
             Hi, I'm Aman,&nbsp;
             <TypeAnimation
               sequence={[
@@ -35,9 +35,10 @@ function HomePage() {
               wrapper="span"
               speed={20}
               repeat={Infinity}
-              className="text-white"
+              className="text-white inline-block"
             />
           </p>
+
           <div className="flex items-center gap-5 mt-8 text-white text-3xl">
             <a
               href="https://github.com/Aman-ydav"
@@ -231,9 +232,7 @@ function HomePage() {
             </span>
           </h2>
 
-          <div
-            className="flex flex-wrap justify-center gap-y-10 gap-x-6 mt-10"
-          >
+          <div className="flex flex-wrap justify-center gap-y-10 gap-x-6 mt-10">
             {experienceData.map((exp, i) => (
               <ExperienceCard
                 key={i}
@@ -246,7 +245,10 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="coding" className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20">
+      <section
+        id="coding"
+        className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      >
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
             My <span className="text-purple-400">Coding Profiles</span>
@@ -259,9 +261,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section
-        className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center"
-      >
+      <section className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug max-w-3xl">
           Ready to take <span className="text-purple-400">your</span> digital
           presence to the next level?
