@@ -7,6 +7,8 @@ import { FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
 import ExperienceCard from "./ExperienceCard.jsx";
 import CodingProfileCard from "./CodingProfileCard";
 import { projects, experienceData, codingProfiles } from "./Data.jsx";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function HomePage() {
   return (
@@ -86,7 +88,6 @@ function HomePage() {
             </button>
           </a>
         </div>
-
         <div className="relative z-20 p-4 sm:p-6 rounded-2xl shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mx-10 sm:mx-50 md:mx-30 lg:mx-40 mt-12">
           <div className="flex flex-col justify-start items-start gap-4">
             <img
@@ -97,7 +98,14 @@ function HomePage() {
               onContextMenu={(e) => e.preventDefault()}
             />
           </div>
-
+          
+              <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className=""
+          >
           <div className="flex flex-col justify-around gap-6 z-20">
             <div className="bg-[#0d0c1b] p-4 rounded-2xl shadow-lg">
               <div className="flex flex-col sm:flex-row md:flex-row justify-between gap-3 items-center">
@@ -125,7 +133,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
-
+              
             <div className="flex flex-row md:flex-rpw bg-[#0d0c1b] p-4 z-20 sm:p-6 rounded-2xl shadow-lg gap-4 md:gap-6">
               <div className="grid grid-rows-2 gap-4 flex-1 justify-between items-center">
                 <div className="bg-[#1c1b2a] py-2 px-3 text-white rounded-md text-center font-medium">
@@ -144,172 +152,212 @@ function HomePage() {
               </div>
             </div>
           </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="relative w-full min-h-fit bg-[#030318] text-white overflow-hidden  z-20">
-        <div className="absolute inset-0 z-0"></div>
-        <div className="absolute inset-0 mask-gradient-bottom z-[0] pointer-events-none" />
+      
+        <section className="relative w-full min-h-fit bg-[#030318] text-white overflow-hidden  z-20">
+          <div className="absolute inset-0 z-0"></div>
+          <div className="absolute inset-0 mask-gradient-bottom z-[0] pointer-events-none" />
+          <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className=""
+          >
+          <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center  z-20">
+            <div className="flex justify-center md:justify-start">
+              <img
+                src={Img2}
+                alt="Full Stack Illustration"
+                className="w-full max-w-md md:max-w-lg lg:max-w-xl pointer-events-none select-none rounded-2xl "
+                draggable="false"
+              />
+            </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center  z-20">
-          <div className="flex justify-center md:justify-start">
-            <img
-              src={Img2}
-              alt="Full Stack Illustration"
-              className="w-full max-w-md md:max-w-lg lg:max-w-xl pointer-events-none select-none rounded-2xl "
-              draggable="false"
-            />
+            <div className="flex flex-col justify-center space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                What<span className="text-purple-400"> I Do ?</span>
+              </h2>
+
+              <div>
+                <h3 className="text-2xl font-semibold flex items-center gap-3">
+                  Full Stack Development
+                  <span className="flex gap-2 font-light text-3xl">
+                    <i class="ri-html5-line"></i>
+                    <i class="ri-tailwind-css-fill"></i>
+                    <i class="ri-javascript-line"></i>
+                    <i class="ri-reactjs-fill"></i>
+                    <i class="ri-nodejs-fill"></i>
+                    <i class="ri-nextjs-fill"></i>
+                    <i class="ri-leaf-line"></i>
+                  </span>
+                </h3>
+                <ul className="mt-3 text-base space-y-2 text-white/80 list-disc list-inside">
+                  <li>
+                    Building responsive website frontends using React, Tailwind,
+                    JavaScript, and Node.js
+                  </li>
+                  <li>
+                    Designing and implementing RESTful backend APIs using
+                    Node.js, Express.js, and MongoDB
+                  </li>
+                  <li>
+                    Integrating secure user authentication and data management
+                    using JWT and MongoDB
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 opacity-40 italic text-sm">
+                More to come...
+              </div>
+            </div>
           </div>
+            </motion.div>
+        </section>
 
-          <div className="flex flex-col justify-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
-              What<span className="text-purple-400"> I Do ?</span>
+        <section
+          id="projects"
+          className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+        >
+          <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className=""
+          >
+          <div className="max-w-screen-xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-15 text-center">
+              My <span className="text-purple-400">Projects</span>
+            </h2>
+            <div className="w-full flex flex-col lg:flex-row flex-wrap justify-center items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-18 gap-x-8">
+                {projects.map((project, idx) => (
+                  <ProjectCard key={idx} {...project} />
+                ))}
+              </div>
+            </div>
+          </div>
+          </motion.div>
+        </section>
+
+        <section
+          id="experience"
+          className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+        >
+          <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className=""
+          >
+          <div className="max-w-screen-xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
+              My{" "}
+              <span className="text-purple-400">
+                Experience <span className="text-white">&</span> Milestones
+              </span>
             </h2>
 
-            <div>
-              <h3 className="text-2xl font-semibold flex items-center gap-3">
-                Full Stack Development
-                <span className="flex gap-2 font-light text-3xl">
-                  <i class="ri-html5-line"></i>
-                  <i class="ri-tailwind-css-fill"></i>
-                  <i class="ri-javascript-line"></i>
-                  <i class="ri-reactjs-fill"></i>
-                  <i class="ri-nodejs-fill"></i>
-                  <i class="ri-nextjs-fill"></i>
-                  <i class="ri-leaf-line"></i>
-                </span>
-              </h3>
-              <ul className="mt-3 text-base space-y-2 text-white/80 list-disc list-inside">
-                <li>
-                  Building responsive website frontends using React, Tailwind,
-                  JavaScript, and Node.js
-                </li>
-                <li>
-                  Designing and implementing RESTful backend APIs using Node.js,
-                  Express.js, and MongoDB
-                </li>
-                <li>
-                  Integrating secure user authentication and data management
-                  using JWT and MongoDB
-                </li>
-              </ul>
-            </div>
-
-            <div className="mt-8 opacity-40 italic text-sm">
-              More to come...
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="projects"
-        className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
-      >
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text4xl sm:text-5xl font-bold mb-15 text-center">
-            My <span className="text-purple-400">Projects</span>
-          </h2>
-          <div className="w-full flex flex-col lg:flex-row flex-wrap justify-center items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-18 gap-x-8">
-              {projects.map((project, idx) => (
-                <ProjectCard key={idx} {...project} />
+            <div className="flex flex-wrap justify-center gap-y-10 gap-x-6 mt-10">
+              {experienceData.map((exp, i) => (
+                <ExperienceCard
+                  key={i}
+                  icon={exp.icon}
+                  title={exp.title}
+                  description={exp.description}
+                />
               ))}
             </div>
           </div>
-        </div>
-      </section>
+          </motion.div>
+        </section>
 
-      <section
-        id="experience"
-        className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
-      >
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
-            My{" "}
-            <span className="text-purple-400">
-              Experience <span className="text-white">&</span> Milestones
-            </span>
-          </h2>
-
-          <div className="flex flex-wrap justify-center gap-y-10 gap-x-6 mt-10">
-            {experienceData.map((exp, i) => (
-              <ExperienceCard
-                key={i}
-                icon={exp.icon}
-                title={exp.title}
-                description={exp.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="coding"
-        className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
-      >
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
-            My <span className="text-purple-400">Coding Profiles</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-            {codingProfiles.map((profile, i) => (
-              <CodingProfileCard key={i} {...profile} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug max-w-3xl">
-          Ready to take <span className="text-purple-400">your</span> digital
-          presence to the next level?
-        </h2>
-
-        <p className="mt-6 text-gray-400 max-w-xl text-base md:text-lg">
-          Reach out to me today and let's discuss how I can help you achieve
-          your goals.
-        </p>
-
-        <a
-          href="mailto:amanyadav923949@gmail.com"
-          className="mt-8 inline-flex items-center px-6 py-3 border border-purple-500 text-white rounded-md hover:bg-white hover:text-black transition-all duration-300"
+        <section
+          id="coding"
+          className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
         >
-          Let’s get in touch <span className="ml-2">🡥</span>
-        </a>
+          <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className=""
+          >
+          <div className="max-w-screen-xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
+              My <span className="text-purple-400">Coding Profiles</span>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+              {codingProfiles.map((profile, i) => (
+                <CodingProfileCard key={i} {...profile} />
+              ))}
+            </div>
+          </div>
+          </motion.div>
+        </section>
 
-        <div className="mt-12 flex items-center gap-4">
-          <a
-            href="https://github.com/Aman-ydav"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
+        <section className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center">
+          <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
           >
-            <FaGithub className="w-5 h-5" />
-          </a>
-          <a
-            href="t.me/aman_ydav"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
-          >
-            <FaPaperPlane className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/aman--yadv/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
-          >
-            <FaLinkedin className="w-5 h-5" />
-          </a>
-        </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug max-w-3xl">
+            Ready to take <span className="text-purple-400">your</span> digital
+            presence to the next level?
+          </h2>
 
-        <p className="mt-12 text-sm text-gray-500">
-          Copyright © 2025 Aman Yadav
-        </p>
-      </section>
+          <p className="mt-6 text-gray-400 max-w-xl text-base md:text-lg">
+            Reach out to me today and let's discuss how I can help you achieve
+            your goals.
+          </p>
+
+          <a
+            href="mailto:amanyadav923949@gmail.com"
+            className="mt-8 inline-flex items-center px-6 py-3 border border-purple-500 text-white rounded-md hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Let’s get in touch <span className="ml-2">🡥</span>
+          </a>
+
+          <div className="mt-12 flex items-center gap-4 justify-center">
+            <a
+              href="https://github.com/Aman-ydav"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
+            >
+              <FaGithub className="w-5 h-5" />
+            </a>
+            <a
+              href="t.me/aman_ydav"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
+            >
+              <FaPaperPlane className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aman--yadv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border border-white/10 rounded-lg hover:bg-white/10 transition"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </a>
+          </div>
+
+          <p className="mt-12 text-sm text-gray-500">
+            Copyright © 2025 Aman Yadav
+          </p>
+          </motion.div>
+        </section>
     </>
   );
 }

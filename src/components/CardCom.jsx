@@ -2,12 +2,12 @@ import React from "react";
 
 const ProjectCard = ({ title, description, imageUrl, techStack, link }) => {
   return (
-    <div className="bg-[#0d0c1b] w-100 h-auto flex flex-col justify-start rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 animate-float">
-      <div className="p-5">
+    <div className="bg-[#0d0c1b] w-auto sm:w-100 h-auto flex flex-col justify-start rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 animate-float">
+      <div className="w-full h-full p-5 ">
         <img
           src={imageUrl}
           alt={title}
-          className="w-auto object-cover pointer-events-none select-none rounded-t-lg"
+          className="w-auto object-cover pointer-events-none select-none rounded-t-lg self-center"
         />
       </div>
       <div className="p-5 flex flex-col gap-3">
