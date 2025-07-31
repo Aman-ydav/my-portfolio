@@ -8,7 +8,7 @@ import ExperienceCard from "./ExperienceCard.jsx";
 import CodingProfileCard from "./CodingProfileCard";
 import { projects, experienceData, codingProfiles } from "./Data.jsx";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+
 
 function HomePage() {
   return (
@@ -24,7 +24,7 @@ function HomePage() {
             goal.
           </h1>
           <p className="text-sm xs:text-base sm:text-lg md:text-2xl text-gray-300 mt-6 flex flex-wrap justify-center items-center gap-2 text-center leading-relaxed">
-            Hi, I'm Aman,&nbsp;
+            Hi, I'm Aman,
             <TypeAnimation
               sequence={[
                 "a Software Developer based in India.",
@@ -88,7 +88,7 @@ function HomePage() {
             </button>
           </a>
         </div>
-        <div className="relative z-20 p-4 sm:p-6 rounded-2xl shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mx-10 sm:mx-50 md:mx-30 lg:mx-40 mt-12">
+        <div className="relative z-20 p-4 sm:p-6 rounded-2xl shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mx-5 sm:mx-50 md:mx-50 lg:mx-50 mt-12">
           <div className="flex flex-col justify-start items-start gap-4">
             <img
               src={HeroImg}
@@ -98,75 +98,74 @@ function HomePage() {
               onContextMenu={(e) => e.preventDefault()}
             />
           </div>
-          
-              <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className=""
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className=""
           >
-          <div className="flex flex-col justify-around gap-6 z-20">
-            <div className="bg-[#0d0c1b] p-4 rounded-2xl shadow-lg">
-              <div className="flex flex-col sm:flex-row md:flex-row justify-between gap-3 items-center">
-                <div className="flex flex-col gap-2 sm:gap-4">
-                  <p className="text-xs md:text-xs text-gray-400">
-                    I constantly try to improve
-                  </p>
-                  <h2 className="text-lg sm:text-lg md:text-xl font-bold text-white">
-                    My Tech Stack
-                  </h2>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
-                    <i class="ri-reactjs-line"></i> ReactJS
-                  </span>
-                  <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
-                    <i class="ri-nodejs-fill"></i> NodeJS
-                  </span>
-                  <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
-                    <i class="ri-leaf-fill"></i> MongoDB
-                  </span>
-                  <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
-                    <i class="ri-javascript-fill"></i> JavaScript
-                  </span>
-                </div>
-              </div>
-            </div>
-              
-            <div className="flex flex-row md:flex-rpw bg-[#0d0c1b] p-4 z-20 sm:p-6 rounded-2xl shadow-lg gap-4 md:gap-6">
-              <div className="grid grid-rows-2 gap-4 flex-1 justify-between items-center">
-                <div className="bg-[#1c1b2a] py-2 px-3 text-white rounded-md text-center font-medium">
-                  <i class="ri-tools-line"></i> Problem Solver
-                </div>
-                <div className="bg-[#1c1b2a] py-2 px-3 rounded-md text-white text-center font-medium">
-                  <i class="ri-team-line"></i> Team-Oriented
+            <div className="flex flex-col justify-around gap-6 z-20 m-auto">
+              <div className="bg-[#0d0c1b] p-3 rounded-2xl shadow-lg">
+                <div className="flex flex-col sm:flex-row md:flex-row justify-between gap-3 items-center">
+                  <div className="flex flex-col gap-2 sm:gap-4 ml-5">
+                    <p className="text-xs md:text-xs text-gray-400">
+                      I constantly try to improve
+                    </p>
+                    <h2 className="text-lg sm:text-lg md:text-xl font-bold text-white">
+                      My Tech Stack
+                    </h2>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
+                      <i class="ri-reactjs-line"></i> ReactJS
+                    </span>
+                    <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
+                      <i class="ri-nodejs-fill"></i> NodeJS
+                    </span>
+                    <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
+                      <i class="ri-leaf-fill"></i> MongoDB
+                    </span>
+                    <span className="bg-[#1c1b2a] text-white px-4 py-2 rounded-md text-center font-medium">
+                      <i class="ri-javascript-fill"></i> JavaScript
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex-3/11 flex items-center z-20">
-                <h3 className="text-md sm:text-md md:text-lg font-semibold text-white leading-relaxed">
-                  I prioritize client collaboration, fostering open
-                  communication to deliver reliable & impactful sol<sup>n</sup>.
-                </h3>
+              <div className="flex flex-col md:flex-row bg-[#0d0c1b] p-4 z-20 sm:p-6 rounded-2xl shadow-lg gap-4 md:gap-6">
+                <div className="grid grid-cols-2 md:grid-rows-2 flex-1 gap-3 justify-between items-center">
+                  <div className="bg-[#1c1b2a] py-2 px-4 text-white rounded-md text-center text-md md:text-md font-medium">
+                    <i class="ri-settings-3-line"></i> Optimizer
+                  </div>
+                  <div className="bg-[#1c1b2a] py-2 px-3 rounded-md text-white text-center text-md md:text-md font-medium">
+                    <i class="ri-lightbulb-flash-line"></i> Innovator
+                  </div>
+                </div>
+
+                <div className="flex-3/11 flex items-center z-20">
+                  <h3 className="text-sm sm:text-sm md:text-[17px] font-semibold text-white leading-relaxed text-center">
+                    I prioritize client collaboration, fostering open
+                    communication to deliver reliable & impactful solution.
+                  </h3>
+                </div>
               </div>
             </div>
-          </div>
           </motion.div>
         </div>
       </section>
 
-      
-        <section className="relative w-full min-h-fit bg-[#030318] text-white overflow-hidden  z-20">
-          <div className="absolute inset-0 z-0"></div>
-          <div className="absolute inset-0 mask-gradient-bottom z-[0] pointer-events-none" />
-          <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className=""
-          >
+      <section className="relative w-full min-h-fit bg-[#030318] text-white overflow-hidden  z-20">
+        <div className="absolute inset-0 z-0"></div>
+        <div className="absolute inset-0 mask-gradient-bottom z-[0] pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className=""
+        >
           <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center  z-20">
             <div className="flex justify-center md:justify-start">
               <img
@@ -178,14 +177,14 @@ function HomePage() {
             </div>
 
             <div className="flex flex-col justify-center space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white text-center md:text-left">
                 What<span className="text-purple-400"> I Do ?</span>
               </h2>
 
               <div>
-                <h3 className="text-2xl font-semibold flex items-center gap-3">
+                <h3 className="text-xl  md:text-2xl font-semibold flex items-center gap-3">
                   Full Stack Development
-                  <span className="flex gap-2 font-light text-3xl">
+                  <span className="flex gap-2 font-light text-xl md:text-3xl">
                     <i class="ri-html5-line"></i>
                     <i class="ri-tailwind-css-fill"></i>
                     <i class="ri-javascript-line"></i>
@@ -216,20 +215,20 @@ function HomePage() {
               </div>
             </div>
           </div>
-            </motion.div>
-        </section>
+        </motion.div>
+      </section>
 
-        <section
-          id="projects"
-          className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      <section
+        id="projects"
+        className="relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className=""
         >
-          <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className=""
-          >
           <div className="max-w-screen-xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold mb-15 text-center">
               My <span className="text-purple-400">Projects</span>
@@ -242,20 +241,20 @@ function HomePage() {
               </div>
             </div>
           </div>
-          </motion.div>
-        </section>
+        </motion.div>
+      </section>
 
-        <section
-          id="experience"
-          className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      <section
+        id="experience"
+        className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className=""
         >
-          <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className=""
-          >
           <div className="max-w-screen-xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
               My{" "}
@@ -275,20 +274,20 @@ function HomePage() {
               ))}
             </div>
           </div>
-          </motion.div>
-        </section>
+        </motion.div>
+      </section>
 
-        <section
-          id="coding"
-          className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      <section
+        id="coding"
+        className="flex justify-center items-center relative w-full h-fit bg-[#030318] text-white overflow-hidden px-4 py-10 sm:px-8 lg:px-20"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className=""
         >
-          <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className=""
-          >
           <div className="max-w-screen-xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-center">
               My <span className="text-purple-400">Coding Profiles</span>
@@ -299,16 +298,16 @@ function HomePage() {
               ))}
             </div>
           </div>
-          </motion.div>
-        </section>
+        </motion.div>
+      </section>
 
-        <section className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center">
-          <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-          >
+      <section className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug max-w-3xl">
             Ready to take <span className="text-purple-400">your</span> digital
             presence to the next level?
@@ -356,8 +355,8 @@ function HomePage() {
           <p className="mt-12 text-sm text-gray-500">
             Copyright © 2025 Aman Yadav
           </p>
-          </motion.div>
-        </section>
+        </motion.div>
+      </section>
     </>
   );
 }

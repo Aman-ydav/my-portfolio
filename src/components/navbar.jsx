@@ -2,11 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import logoDark from "../assets/logo-dark.png";
 import "./navbar.css";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,14 +21,18 @@ function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setIsMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isMenuOpen]);
 
   const navItems = [
     { label: "Projects", to: "projects" },
@@ -36,91 +43,97 @@ function Navbar() {
   ];
 
   return (
-    <header
-      className={`w-full max-h-20 fixed top-0 left-0 z-50 transition-all duration-400 ${
-        isScrolled
-          ? "bg-[#0f0f0f]/40 backdrop-blur-sm shadow-sm border-none"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-[1300px] mx-auto flex items-center justify-between px-4">
-        <a href="/" className="clickBounce" onClick={(e) => e.preventDefault()}>
-          <img
-            className="h-20 w-auto logo-bounce cursor-pointer"
-            src={logoDark}
-            alt="logo"
-            draggable="false"
-          />
-        </a>
+    <>
+      <header
+        className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 border-0
+          ${
+            isMenuOpen || isScrolled
+              ? "bg-[#0f0f0f]/50 backdrop-blur-sm shadow-0"
+              : "bg-transparent"
+          } `}
+      >
+        <div className="max-w-[1300px] mx-auto flex items-center justify-between px-4 py-2">
+          <a
+            href="/"
+            className="clickBounce"
+            onClick={(e) => e.preventDefault()}
+          >
+            <img
+              className="h-16 w-auto logo-bounce cursor-pointer"
+              src={logoDark}
+              alt="logo"
+              draggable="false"
+            />
+          </a>
 
-        <nav className="hidden lg:flex items-center gap-8 text-white text-md font-medium">
-          {navItems.map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              smooth={true}
-              duration={700}
-              spy={true}
-              offset={-100}
-              activeClass="active-nav"
-              className="clickBounce bounce nav-item bg-[#1c1b2a] p-1 px-3 rounded-3xl cursor-pointer"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+          <nav className="hidden lg:flex justify-center items-center gap-8 text-white text-md font-medium">
+            {navItems.map(({ label, to }) => (
+              <Link
+                key={to}
+                to={to}
+                smooth={true}
+                duration={700}
+                spy={true}
+                offset={-100}
+                activeClass="active-nav"
+                className="clickBounce bounce nav-item bg-[#1c1b2a] p-1 px-3 rounded-3xl cursor-pointer"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+          <div className="text-2xl hidden lg:block px-5">
+            <button className="cursor-pointer bounce clickBounce">🌞</button>
+          </div>
 
-        <div className="text-2xl hidden lg:block">
-          <button className="cursor-pointer bounce clickBounce">🌞</button>
-        </div>
-
-        {!isMenuOpen && (
-          <div className="lg:hidden">
+          <div className="lg:hidden text-white text-3xl z-50">
             <button
-              className="text-white text-3xl"
-              onClick={() => setIsMenuOpen(true)}
-              aria-label="Open Menu"
+              ref={buttonRef}
+              onClick={() => {
+                setIsMenuOpen((prev) => !prev);
+              }}
+              aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             >
-              ☰
+              {isMenuOpen ? "✕" : "☰"}
             </button>
           </div>
-        )}
-      </div>
-
-      <div
-        className={`lg:hidden fixed top-20 left-0 w-full h-full bg-[#030314]/90 text-white transition-all duration-300 z-40 ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      >
-        <div ref={menuRef} className="px-6 pt-6 relative space-y-4">
-          <button
-            className="absolute top-4 right-6 text-3xl z-50"
-            onClick={() => setIsMenuOpen(false)}
-            aria-label="Close Menu"
-          >
-            ✕
-          </button>
-
-          {navItems.map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              smooth={true}
-              duration={500}
-              offset={-80}
-              onClick={() => setIsMenuOpen(false)}
-              className="block w-full text-2xl nav-item cursor-pointer"
-            >
-              {label}
-            </Link>
-          ))}
-
-          <div className="pt-4">
-            <button className="text-xl">🌞</button>
-          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+
+      <AnimatePresence>
+        
+  {isMenuOpen && (
+    <motion.div
+      ref={menuRef}
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: "auto", opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="lg:hidden fixed w-full top-0 left-0 z-40 bg-[#0f0f0f]/40 backdrop-blur-sm text-white px-2 py-4 overflow-hidden"
+    >
+      <div className="flex flex-col gap-4 mt-18">
+            {navItems.map(({ label, to }) => (
+              <Link
+                key={to}
+                to={to}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                activeClass="active-nav"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-md w-full font-medium text-white hover:bg-[#1c1b2a] p-2 px-3 rounded-2xl cursor-pointer"
+              >
+                {label}
+              </Link>
+            ))}
+            <button className="text-xl pt-2 text-left px-4">🌞</button>
+          </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+      
+    </>
   );
 }
 
