@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 function HomePage() {
   return (
     <>
+
       <section className="relative w-full min-h-screen bg-[#030318] text-white overflow-hidden">
         <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[300px] bg-purple-600 opacity-60 blur-[120px] rounded-full z-0 pointer-events-none" />
         <div className="absolute inset-0 bg-grid-pattern mask-gradient-bottom z-0 pointer-events-none" />
@@ -301,7 +302,7 @@ function HomePage() {
         </motion.div>
       </section>
 
-      <section className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center">
+      <section id="contact" className="bg-[#030318] text-white px-6 py-16 md:py-24 text-center flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
