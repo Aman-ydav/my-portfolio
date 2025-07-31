@@ -112,7 +112,7 @@ function Navbar() {
       transition={{ duration: 0.4, ease: "easeInOut" }}
       className="lg:hidden fixed w-full top-0 left-0 z-40 bg-[#0f0f0f]/40 backdrop-blur-sm text-white px-2 py-4 overflow-hidden"
     >
-      <div className="flex flex-col gap-4 mt-18">
+      <div className="flex flex-col gap-4 mt-18 items-center">
             {navItems.map(({ label, to }) => (
               <Link
                 key={to}
@@ -122,12 +122,12 @@ function Navbar() {
                 offset={-80}
                 activeClass="active-nav"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-md w-full font-medium text-white hover:bg-[#1c1b2a] p-2 px-3 rounded-2xl cursor-pointer"
+                className="text-md w-[80%] font-medium text-white hover:bg-[#1c1b2a] px-5 p-2 rounded-xl cursor-pointer"
               >
                 {label}
               </Link>
-            ))}
-            <button className="text-xl pt-2 text-left px-4">🌞</button>
+            ))} <hr/>
+            <button className="text-xl pt-2 text-left hover:bg-[#fff] p-2 px-8 border-2 border-purple-500 rounded-xl cursor-pointer">🌞</button>
           </div>
     </motion.div>
   )}
