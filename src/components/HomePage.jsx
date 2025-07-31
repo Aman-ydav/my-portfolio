@@ -89,7 +89,7 @@ function HomePage() {
             </button>
           </a>
         </div>
-        <div className="relative z-20 p-4 sm:p-6 rounded-2xl shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mx-5 sm:mx-50 md:mx-50 lg:mx-50 mt-12">
+        <div className="relative z-20 p-4 sm:p-6 rounded-2xl shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mx-5 sm:mx-30 md:mx-30 lg:mx-30 mt-12">
           <div className="flex flex-col justify-start items-start gap-4">
             <img
               src={HeroImg}
@@ -136,7 +136,7 @@ function HomePage() {
               </div>
 
               <div className="flex flex-col md:flex-row bg-[#0d0c1b] p-4 z-20 sm:p-6 rounded-2xl shadow-lg gap-4 md:gap-6">
-                <div className="grid grid-cols-2 md:grid-rows-2 flex-1 gap-3 justify-between items-center">
+               <div className="grid grid-cols-2 md:grid-cols-1 md:grid-rows-2 gap-3 items-center">
                   <div className="bg-[#1c1b2a] py-2 px-4 text-white rounded-md text-center text-md md:text-md font-medium">
                     <i class="ri-settings-3-line"></i> Optimizer
                   </div>

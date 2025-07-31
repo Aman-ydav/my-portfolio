@@ -38,7 +38,7 @@ function Navbar() {
     { label: "Projects", to: "projects" },
     { label: "Experience", to: "experience" },
     { label: "Coding Profiles", to: "coding" },
-    { label: "Education", to: "education" },
+   
     { label: "Contact", to: "contact" },
   ];
 
@@ -59,7 +59,7 @@ function Navbar() {
             onClick={(e) => e.preventDefault()}
           >
             <img
-              className="h-16 w-auto logo-bounce cursor-pointer mx-5"
+              className="h-18 w-auto logo-bounce cursor-pointer mx-5"
               src={logoDark}
               alt="logo"
               draggable="false"
