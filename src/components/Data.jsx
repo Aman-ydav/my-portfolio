@@ -104,13 +104,13 @@ const codingProfiles = [
   {
     icon: Code1,
     title: "LeetCode",
-    description: "Solved over 120 questions with a streak of 50 days.",
+    description: "Solved more than 150 questions, building strong coding abilities",
   },
   {
     icon: Code2,
     title: "GeeksforGeeks",
     description:
-      "Institute Rank 5700 , solved 100 questions with a streak of 0 days.",
+      "Solved 110+ problems on GeeksforGeeks, strengthening core DSA concepts",
   },
 
 ];
